@@ -1,0 +1,2629 @@
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\app\globals.css
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(0.98 0.05 240); /* 밝은 파란 배경 */
+  --foreground: oklch(0.15 0.03 240); /* 어두운 파란 텍스트 */
+  --card: oklch(0.98 0.05 240);
+  --card-foreground: oklch(0.15 0.03 240);
+  --popover: oklch(0.98 0.05 240);
+  --popover-foreground: oklch(0.15 0.03 240);
+  --primary: oklch(0.65 0.15 320); /* 생동감 있는 핑크 계열 */
+  --primary-foreground: oklch(0.9 0.05 320);
+  --secondary: oklch(0.85 0.05 200); /* 부드러운 민트 계열 */
+  --secondary-foreground: oklch(0.2 0.03 200);
+  --muted: oklch(0.9 0.05 240);
+  --muted-foreground: oklch(0.55 0.03 240);
+  --accent: oklch(0.7 0.1 200); /* 보조 색상 (민트 톤) */
+  --accent-foreground: oklch(0.2 0.03 200);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.98 0.05 240);
+  --sidebar-foreground: oklch(0.15 0.03 240);
+  --sidebar-primary: oklch(0.65 0.15 320);
+  --sidebar-primary-foreground: oklch(0.9 0.05 320);
+  --sidebar-accent: oklch(0.85 0.05 200);
+  --sidebar-accent-foreground: oklch(0.2 0.03 200);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.12 0.03 240); /* 어두운 파란 배경 */
+  --foreground: oklch(0.9 0.05 240);
+  --card: oklch(0.12 0.03 240);
+  --card-foreground: oklch(0.9 0.05 240);
+  --popover: oklch(0.12 0.03 240);
+  --popover-foreground: oklch(0.9 0.05 240);
+  --primary: oklch(0.75 0.2 320);
+  --primary-foreground: oklch(0.2 0.03 320);
+  --secondary: oklch(0.3 0.05 200);
+  --secondary-foreground: oklch(0.9 0.05 200);
+  --muted: oklch(0.3 0.05 240);
+  --muted-foreground: oklch(0.7 0.03 240);
+  --accent: oklch(0.75 0.15 200);
+  --accent-foreground: oklch(0.2 0.03 200);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.12 0.03 240);
+  --sidebar-foreground: oklch(0.9 0.05 240);
+  --sidebar-primary: oklch(0.75 0.2 320);
+  --sidebar-primary-foreground: oklch(0.2 0.03 320);
+  --sidebar-accent: oklch(0.3 0.05 200);
+  --sidebar-accent-foreground: oklch(0.9 0.05 200);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\app\layout.tsx
+import type React from "react";
+import "@/app/globals.css";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata = {
+  title: "REST API 테스터",
+  description: "OpenAPI 문서를 기반으로 REST API를 테스트하는 도구",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="ko" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <Toaster />
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\app\page.tsx
+import ApiTester from "@/components/api-tester";
+
+export default function Home() {
+  return (
+    <main className="container mx-auto py-6 px-4 min-h-screen">
+      <ApiTester />
+    </main>
+  );
+}
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\components\ui\badge.tsx
+import * as React from "react"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
+
+const badgeVariants = cva(
+  "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+  {
+    variants: {
+      variant: {
+        default:
+          "border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80",
+        secondary:
+          "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        destructive:
+          "border-transparent bg-destructive text-destructive-foreground shadow hover:bg-destructive/80",
+        outline: "text-foreground",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  }
+)
+
+export interface BadgeProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof badgeVariants> {}
+
+function Badge({ className, variant, ...props }: BadgeProps) {
+  return (
+    <div className={cn(badgeVariants({ variant }), className)} {...props} />
+  )
+}
+
+export { Badge, badgeVariants }
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\components\ui\button.tsx
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
+
+const buttonVariants = cva(
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  {
+    variants: {
+      variant: {
+        default:
+          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
+        destructive:
+          "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+        outline:
+          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+        secondary:
+          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
+        ghost:
+          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "h-9 px-4 py-2 has-[>svg]:px-3",
+        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        icon: "size-9",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+)
+
+function Button({
+  className,
+  variant,
+  size,
+  asChild = false,
+  ...props
+}: React.ComponentProps<"button"> &
+  VariantProps<typeof buttonVariants> & {
+    asChild?: boolean
+  }) {
+  const Comp = asChild ? Slot : "button"
+
+  return (
+    <Comp
+      data-slot="button"
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props}
+    />
+  )
+}
+
+export { Button, buttonVariants }
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\components\ui\card.tsx
+import * as React from "react"
+
+import { cn } from "@/lib/utils"
+
+const Card = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "rounded-xl border bg-card text-card-foreground shadow",
+      className
+    )}
+    {...props}
+  />
+))
+Card.displayName = "Card"
+
+const CardHeader = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex flex-col space-y-1.5 p-6", className)}
+    {...props}
+  />
+))
+CardHeader.displayName = "CardHeader"
+
+const CardTitle = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("font-semibold leading-none tracking-tight", className)}
+    {...props}
+  />
+))
+CardTitle.displayName = "CardTitle"
+
+const CardDescription = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("text-sm text-muted-foreground", className)}
+    {...props}
+  />
+))
+CardDescription.displayName = "CardDescription"
+
+const CardContent = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+))
+CardContent.displayName = "CardContent"
+
+const CardFooter = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex items-center p-6 pt-0", className)}
+    {...props}
+  />
+))
+CardFooter.displayName = "CardFooter"
+
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\components\ui\collapsible.tsx
+"use client"
+
+import * as CollapsiblePrimitive from "@radix-ui/react-collapsible"
+
+const Collapsible = CollapsiblePrimitive.Root
+
+const CollapsibleTrigger = CollapsiblePrimitive.CollapsibleTrigger
+
+const CollapsibleContent = CollapsiblePrimitive.CollapsibleContent
+
+export { Collapsible, CollapsibleTrigger, CollapsibleContent }
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\components\ui\dropdown-menu.tsx
+"use client"
+
+import * as React from "react"
+import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
+import { Check, ChevronRight, Circle } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+
+const DropdownMenu = DropdownMenuPrimitive.Root
+
+const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger
+
+const DropdownMenuGroup = DropdownMenuPrimitive.Group
+
+const DropdownMenuPortal = DropdownMenuPrimitive.Portal
+
+const DropdownMenuSub = DropdownMenuPrimitive.Sub
+
+const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup
+
+const DropdownMenuSubTrigger = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.SubTrigger>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubTrigger> & {
+    inset?: boolean
+  }
+>(({ className, inset, children, ...props }, ref) => (
+  <DropdownMenuPrimitive.SubTrigger
+    ref={ref}
+    className={cn(
+      "flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent data-[state=open]:bg-accent [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+      inset && "pl-8",
+      className
+    )}
+    {...props}
+  >
+    {children}
+    <ChevronRight className="ml-auto" />
+  </DropdownMenuPrimitive.SubTrigger>
+))
+DropdownMenuSubTrigger.displayName =
+  DropdownMenuPrimitive.SubTrigger.displayName
+
+const DropdownMenuSubContent = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.SubContent>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubContent>
+>(({ className, ...props }, ref) => (
+  <DropdownMenuPrimitive.SubContent
+    ref={ref}
+    className={cn(
+      "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+      className
+    )}
+    {...props}
+  />
+))
+DropdownMenuSubContent.displayName =
+  DropdownMenuPrimitive.SubContent.displayName
+
+const DropdownMenuContent = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content>
+>(({ className, sideOffset = 4, ...props }, ref) => (
+  <DropdownMenuPrimitive.Portal>
+    <DropdownMenuPrimitive.Content
+      ref={ref}
+      sideOffset={sideOffset}
+      className={cn(
+        "z-50 max-h-[var(--radix-dropdown-menu-content-available-height)] min-w-[8rem] overflow-y-auto overflow-x-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md",
+        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+        className
+      )}
+      {...props}
+    />
+  </DropdownMenuPrimitive.Portal>
+))
+DropdownMenuContent.displayName = DropdownMenuPrimitive.Content.displayName
+
+const DropdownMenuItem = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.Item>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
+    inset?: boolean
+  }
+>(({ className, inset, ...props }, ref) => (
+  <DropdownMenuPrimitive.Item
+    ref={ref}
+    className={cn(
+      "relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&>svg]:size-4 [&>svg]:shrink-0",
+      inset && "pl-8",
+      className
+    )}
+    {...props}
+  />
+))
+DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName
+
+const DropdownMenuCheckboxItem = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.CheckboxItem>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.CheckboxItem>
+>(({ className, children, checked, ...props }, ref) => (
+  <DropdownMenuPrimitive.CheckboxItem
+    ref={ref}
+    className={cn(
+      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      className
+    )}
+    checked={checked}
+    {...props}
+  >
+    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+      <DropdownMenuPrimitive.ItemIndicator>
+        <Check className="h-4 w-4" />
+      </DropdownMenuPrimitive.ItemIndicator>
+    </span>
+    {children}
+  </DropdownMenuPrimitive.CheckboxItem>
+))
+DropdownMenuCheckboxItem.displayName =
+  DropdownMenuPrimitive.CheckboxItem.displayName
+
+const DropdownMenuRadioItem = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.RadioItem>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.RadioItem>
+>(({ className, children, ...props }, ref) => (
+  <DropdownMenuPrimitive.RadioItem
+    ref={ref}
+    className={cn(
+      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      className
+    )}
+    {...props}
+  >
+    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+      <DropdownMenuPrimitive.ItemIndicator>
+        <Circle className="h-2 w-2 fill-current" />
+      </DropdownMenuPrimitive.ItemIndicator>
+    </span>
+    {children}
+  </DropdownMenuPrimitive.RadioItem>
+))
+DropdownMenuRadioItem.displayName = DropdownMenuPrimitive.RadioItem.displayName
+
+const DropdownMenuLabel = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.Label>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Label> & {
+    inset?: boolean
+  }
+>(({ className, inset, ...props }, ref) => (
+  <DropdownMenuPrimitive.Label
+    ref={ref}
+    className={cn(
+      "px-2 py-1.5 text-sm font-semibold",
+      inset && "pl-8",
+      className
+    )}
+    {...props}
+  />
+))
+DropdownMenuLabel.displayName = DropdownMenuPrimitive.Label.displayName
+
+const DropdownMenuSeparator = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.Separator>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator>
+>(({ className, ...props }, ref) => (
+  <DropdownMenuPrimitive.Separator
+    ref={ref}
+    className={cn("-mx-1 my-1 h-px bg-muted", className)}
+    {...props}
+  />
+))
+DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName
+
+const DropdownMenuShortcut = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLSpanElement>) => {
+  return (
+    <span
+      className={cn("ml-auto text-xs tracking-widest opacity-60", className)}
+      {...props}
+    />
+  )
+}
+DropdownMenuShortcut.displayName = "DropdownMenuShortcut"
+
+export {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRadioItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuGroup,
+  DropdownMenuPortal,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuRadioGroup,
+}
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\components\ui\input.tsx
+import * as React from "react"
+
+import { cn } from "@/lib/utils"
+
+const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
+  ({ className, type, ...props }, ref) => {
+    return (
+      <input
+        type={type}
+        className={cn(
+          "flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+          className
+        )}
+        ref={ref}
+        {...props}
+      />
+    )
+  }
+)
+Input.displayName = "Input"
+
+export { Input }
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\components\ui\label.tsx
+"use client"
+
+import * as React from "react"
+import * as LabelPrimitive from "@radix-ui/react-label"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
+
+const labelVariants = cva(
+  "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+)
+
+const Label = React.forwardRef<
+  React.ElementRef<typeof LabelPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &
+    VariantProps<typeof labelVariants>
+>(({ className, ...props }, ref) => (
+  <LabelPrimitive.Root
+    ref={ref}
+    className={cn(labelVariants(), className)}
+    {...props}
+  />
+))
+Label.displayName = LabelPrimitive.Root.displayName
+
+export { Label }
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\components\ui\scroll-area.tsx
+"use client"
+
+import * as React from "react"
+import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
+
+import { cn } from "@/lib/utils"
+
+const ScrollArea = React.forwardRef<
+  React.ElementRef<typeof ScrollAreaPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root>
+>(({ className, children, ...props }, ref) => (
+  <ScrollAreaPrimitive.Root
+    ref={ref}
+    className={cn("relative overflow-hidden", className)}
+    {...props}
+  >
+    <ScrollAreaPrimitive.Viewport className="h-full w-full rounded-[inherit]">
+      {children}
+    </ScrollAreaPrimitive.Viewport>
+    <ScrollBar />
+    <ScrollAreaPrimitive.Corner />
+  </ScrollAreaPrimitive.Root>
+))
+ScrollArea.displayName = ScrollAreaPrimitive.Root.displayName
+
+const ScrollBar = React.forwardRef<
+  React.ElementRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>,
+  React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>
+>(({ className, orientation = "vertical", ...props }, ref) => (
+  <ScrollAreaPrimitive.ScrollAreaScrollbar
+    ref={ref}
+    orientation={orientation}
+    className={cn(
+      "flex touch-none select-none transition-colors",
+      orientation === "vertical" &&
+        "h-full w-2.5 border-l border-l-transparent p-[1px]",
+      orientation === "horizontal" &&
+        "h-2.5 flex-col border-t border-t-transparent p-[1px]",
+      className
+    )}
+    {...props}
+  >
+    <ScrollAreaPrimitive.ScrollAreaThumb className="relative flex-1 rounded-full bg-border" />
+  </ScrollAreaPrimitive.ScrollAreaScrollbar>
+))
+ScrollBar.displayName = ScrollAreaPrimitive.ScrollAreaScrollbar.displayName
+
+export { ScrollArea, ScrollBar }
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\components\ui\select.tsx
+"use client"
+
+import * as React from "react"
+import * as SelectPrimitive from "@radix-ui/react-select"
+import { Check, ChevronDown, ChevronUp } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+
+const Select = SelectPrimitive.Root
+
+const SelectGroup = SelectPrimitive.Group
+
+const SelectValue = SelectPrimitive.Value
+
+const SelectTrigger = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
+>(({ className, children, ...props }, ref) => (
+  <SelectPrimitive.Trigger
+    ref={ref}
+    className={cn(
+      "flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background data-[placeholder]:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
+      className
+    )}
+    {...props}
+  >
+    {children}
+    <SelectPrimitive.Icon asChild>
+      <ChevronDown className="h-4 w-4 opacity-50" />
+    </SelectPrimitive.Icon>
+  </SelectPrimitive.Trigger>
+))
+SelectTrigger.displayName = SelectPrimitive.Trigger.displayName
+
+const SelectScrollUpButton = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.ScrollUpButton>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollUpButton>
+>(({ className, ...props }, ref) => (
+  <SelectPrimitive.ScrollUpButton
+    ref={ref}
+    className={cn(
+      "flex cursor-default items-center justify-center py-1",
+      className
+    )}
+    {...props}
+  >
+    <ChevronUp className="h-4 w-4" />
+  </SelectPrimitive.ScrollUpButton>
+))
+SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName
+
+const SelectScrollDownButton = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.ScrollDownButton>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollDownButton>
+>(({ className, ...props }, ref) => (
+  <SelectPrimitive.ScrollDownButton
+    ref={ref}
+    className={cn(
+      "flex cursor-default items-center justify-center py-1",
+      className
+    )}
+    {...props}
+  >
+    <ChevronDown className="h-4 w-4" />
+  </SelectPrimitive.ScrollDownButton>
+))
+SelectScrollDownButton.displayName =
+  SelectPrimitive.ScrollDownButton.displayName
+
+const SelectContent = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>
+>(({ className, children, position = "popper", ...props }, ref) => (
+  <SelectPrimitive.Portal>
+    <SelectPrimitive.Content
+      ref={ref}
+      className={cn(
+        "relative z-50 max-h-[--radix-select-content-available-height] min-w-[8rem] overflow-y-auto overflow-x-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+        position === "popper" &&
+          "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
+        className
+      )}
+      position={position}
+      {...props}
+    >
+      <SelectScrollUpButton />
+      <SelectPrimitive.Viewport
+        className={cn(
+          "p-1",
+          position === "popper" &&
+            "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]"
+        )}
+      >
+        {children}
+      </SelectPrimitive.Viewport>
+      <SelectScrollDownButton />
+    </SelectPrimitive.Content>
+  </SelectPrimitive.Portal>
+))
+SelectContent.displayName = SelectPrimitive.Content.displayName
+
+const SelectLabel = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Label>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label>
+>(({ className, ...props }, ref) => (
+  <SelectPrimitive.Label
+    ref={ref}
+    className={cn("px-2 py-1.5 text-sm font-semibold", className)}
+    {...props}
+  />
+))
+SelectLabel.displayName = SelectPrimitive.Label.displayName
+
+const SelectItem = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Item>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>
+>(({ className, children, ...props }, ref) => (
+  <SelectPrimitive.Item
+    ref={ref}
+    className={cn(
+      "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      className
+    )}
+    {...props}
+  >
+    <span className="absolute right-2 flex h-3.5 w-3.5 items-center justify-center">
+      <SelectPrimitive.ItemIndicator>
+        <Check className="h-4 w-4" />
+      </SelectPrimitive.ItemIndicator>
+    </span>
+    <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
+  </SelectPrimitive.Item>
+))
+SelectItem.displayName = SelectPrimitive.Item.displayName
+
+const SelectSeparator = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Separator>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>
+>(({ className, ...props }, ref) => (
+  <SelectPrimitive.Separator
+    ref={ref}
+    className={cn("-mx-1 my-1 h-px bg-muted", className)}
+    {...props}
+  />
+))
+SelectSeparator.displayName = SelectPrimitive.Separator.displayName
+
+export {
+  Select,
+  SelectGroup,
+  SelectValue,
+  SelectTrigger,
+  SelectContent,
+  SelectLabel,
+  SelectItem,
+  SelectSeparator,
+  SelectScrollUpButton,
+  SelectScrollDownButton,
+}
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\components\ui\tabs.tsx
+"use client"
+
+import * as React from "react"
+import * as TabsPrimitive from "@radix-ui/react-tabs"
+
+import { cn } from "@/lib/utils"
+
+const Tabs = TabsPrimitive.Root
+
+const TabsList = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.List>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
+>(({ className, ...props }, ref) => (
+  <TabsPrimitive.List
+    ref={ref}
+    className={cn(
+      "inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground",
+      className
+    )}
+    {...props}
+  />
+))
+TabsList.displayName = TabsPrimitive.List.displayName
+
+const TabsTrigger = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
+>(({ className, ...props }, ref) => (
+  <TabsPrimitive.Trigger
+    ref={ref}
+    className={cn(
+      "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow",
+      className
+    )}
+    {...props}
+  />
+))
+TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
+
+const TabsContent = React.forwardRef<
+  React.ElementRef<typeof TabsPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
+>(({ className, ...props }, ref) => (
+  <TabsPrimitive.Content
+    ref={ref}
+    className={cn(
+      "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+      className
+    )}
+    {...props}
+  />
+))
+TabsContent.displayName = TabsPrimitive.Content.displayName
+
+export { Tabs, TabsList, TabsTrigger, TabsContent }
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\components\ui\toast.tsx
+"use client"
+
+import * as React from "react"
+import * as ToastPrimitives from "@radix-ui/react-toast"
+import { cva, type VariantProps } from "class-variance-authority"
+import { X } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+
+const ToastProvider = ToastPrimitives.Provider
+
+const ToastViewport = React.forwardRef<
+  React.ElementRef<typeof ToastPrimitives.Viewport>,
+  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Viewport>
+>(({ className, ...props }, ref) => (
+  <ToastPrimitives.Viewport
+    ref={ref}
+    className={cn(
+      "fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]",
+      className
+    )}
+    {...props}
+  />
+))
+ToastViewport.displayName = ToastPrimitives.Viewport.displayName
+
+const toastVariants = cva(
+  "group pointer-events-auto relative flex w-full items-center justify-between space-x-2 overflow-hidden rounded-md border p-4 pr-6 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full",
+  {
+    variants: {
+      variant: {
+        default: "border bg-background text-foreground",
+        destructive:
+          "destructive group border-destructive bg-destructive text-destructive-foreground",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  }
+)
+
+const Toast = React.forwardRef<
+  React.ElementRef<typeof ToastPrimitives.Root>,
+  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Root> &
+    VariantProps<typeof toastVariants>
+>(({ className, variant, ...props }, ref) => {
+  return (
+    <ToastPrimitives.Root
+      ref={ref}
+      className={cn(toastVariants({ variant }), className)}
+      {...props}
+    />
+  )
+})
+Toast.displayName = ToastPrimitives.Root.displayName
+
+const ToastAction = React.forwardRef<
+  React.ElementRef<typeof ToastPrimitives.Action>,
+  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Action>
+>(({ className, ...props }, ref) => (
+  <ToastPrimitives.Action
+    ref={ref}
+    className={cn(
+      "inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium transition-colors hover:bg-secondary focus:outline-none focus:ring-1 focus:ring-ring disabled:pointer-events-none disabled:opacity-50 group-[.destructive]:border-muted/40 group-[.destructive]:hover:border-destructive/30 group-[.destructive]:hover:bg-destructive group-[.destructive]:hover:text-destructive-foreground group-[.destructive]:focus:ring-destructive",
+      className
+    )}
+    {...props}
+  />
+))
+ToastAction.displayName = ToastPrimitives.Action.displayName
+
+const ToastClose = React.forwardRef<
+  React.ElementRef<typeof ToastPrimitives.Close>,
+  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Close>
+>(({ className, ...props }, ref) => (
+  <ToastPrimitives.Close
+    ref={ref}
+    className={cn(
+      "absolute right-1 top-1 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-1 group-hover:opacity-100 group-[.destructive]:text-red-300 group-[.destructive]:hover:text-red-50 group-[.destructive]:focus:ring-red-400 group-[.destructive]:focus:ring-offset-red-600",
+      className
+    )}
+    toast-close=""
+    {...props}
+  >
+    <X className="h-4 w-4" />
+  </ToastPrimitives.Close>
+))
+ToastClose.displayName = ToastPrimitives.Close.displayName
+
+const ToastTitle = React.forwardRef<
+  React.ElementRef<typeof ToastPrimitives.Title>,
+  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Title>
+>(({ className, ...props }, ref) => (
+  <ToastPrimitives.Title
+    ref={ref}
+    className={cn("text-sm font-semibold [&+div]:text-xs", className)}
+    {...props}
+  />
+))
+ToastTitle.displayName = ToastPrimitives.Title.displayName
+
+const ToastDescription = React.forwardRef<
+  React.ElementRef<typeof ToastPrimitives.Description>,
+  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Description>
+>(({ className, ...props }, ref) => (
+  <ToastPrimitives.Description
+    ref={ref}
+    className={cn("text-sm opacity-90", className)}
+    {...props}
+  />
+))
+ToastDescription.displayName = ToastPrimitives.Description.displayName
+
+type ToastProps = React.ComponentPropsWithoutRef<typeof Toast>
+
+type ToastActionElement = React.ReactElement<typeof ToastAction>
+
+export {
+  type ToastProps,
+  type ToastActionElement,
+  ToastProvider,
+  ToastViewport,
+  Toast,
+  ToastTitle,
+  ToastDescription,
+  ToastClose,
+  ToastAction,
+}
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\components\ui\toaster.tsx
+"use client"
+
+import { useToast } from "@/hooks/use-toast"
+import {
+  Toast,
+  ToastClose,
+  ToastDescription,
+  ToastProvider,
+  ToastTitle,
+  ToastViewport,
+} from "@/components/ui/toast"
+
+export function Toaster() {
+  const { toasts } = useToast()
+
+  return (
+    <ToastProvider>
+      {toasts.map(function ({ id, title, description, action, ...props }) {
+        return (
+          <Toast key={id} {...props}>
+            <div className="grid gap-1">
+              {title && <ToastTitle>{title}</ToastTitle>}
+              {description && (
+                <ToastDescription>{description}</ToastDescription>
+              )}
+            </div>
+            {action}
+            <ToastClose />
+          </Toast>
+        )
+      })}
+      <ToastViewport />
+    </ToastProvider>
+  )
+}
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\components\api-tester.tsx
+"use client";
+
+import type React from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
+import { Loader2, Send } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import RequestPreview from "./request-preview";
+import ResponseViewer from "./response-viewer";
+import RequestHistory from "./request-history";
+
+// $ref 해석 함수: schema에 $ref가 있으면 apiDocs.components.schemas에서 찾아 반환
+function resolveSchema(schema: any, apiDocs: any): any {
+  if (schema && schema.$ref && apiDocs) {
+    const refPath = schema.$ref.replace(/^#\//, "").split("/");
+    let result = apiDocs;
+    for (const part of refPath) {
+      result = result[part];
+      if (!result) break;
+    }
+    return result;
+  }
+  return schema;
+}
+
+interface ApiParameter {
+  name: string;
+  in: string;
+  required: boolean;
+  schema: {
+    type: string;
+    default?: any;
+  };
+  description?: string;
+}
+
+interface ApiEndpoint {
+  method: string;
+  path: string;
+  details: {
+    summary?: string;
+    parameters?: ApiParameter[];
+    requestBody?: {
+      content?: {
+        "application/json"?: {
+          schema: any; // $ref 포함 가능
+        };
+      };
+    };
+  };
+}
+
+interface RequestHistoryItem {
+  id: string;
+  timestamp: number;
+  endpoint: ApiEndpoint;
+  formData: { query: Record<string, any>; body: Record<string, any> };
+  response?: any;
+  status?: number;
+  duration?: number;
+}
+
+export default function ApiTester() {
+  const { toast } = useToast();
+  const [baseURL, setBaseURL] = useState("http://localhost:8080");
+  const [apiDocsUrl, setApiDocsUrl] = useState("/v3/api-docs");
+  const [apiDocs, setApiDocs] = useState<any>(null);
+  const [endpoints, setEndpoints] = useState<ApiEndpoint[]>([]);
+  const [selectedEndpoint, setSelectedEndpoint] = useState<ApiEndpoint | null>(
+    null
+  );
+  const [formData, setFormData] = useState<{
+    query: Record<string, any>;
+    body: Record<string, any>;
+  }>({
+    query: {} as Record<string, any>,
+    body: {} as Record<string, any>,
+  });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [response, setResponse] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
+  const [apiError, setApiError] = useState<string | null>(null);
+  const [requestHistory, setRequestHistory] = useState<RequestHistoryItem[]>(
+    []
+  );
+  const [requestPreview, setRequestPreview] = useState<{
+    url: string;
+    method: string;
+    headers: Record<string, string>;
+    data?: any;
+  } | null>(null);
+  const [activeTab, setActiveTab] = useState("request");
+
+  // API 문서 로드
+  const fetchApiDocs = async () => {
+    setLoading(true);
+    setApiError(null);
+    try {
+      const fullUrl = `${baseURL}${apiDocsUrl}`;
+      const res = await axios.get(fullUrl);
+      setApiDocs(res.data);
+      const paths = res.data.paths || {};
+      const processedEndpoints = Object.entries(paths).flatMap(
+        ([path, methods]: [string, any]) =>
+          Object.entries(methods).map(([method, details]: [string, any]) => ({
+            method: method.toUpperCase(),
+            path,
+            details,
+            summary: details.summary || `${method.toUpperCase()} ${path}`,
+          }))
+      );
+      setEndpoints(processedEndpoints);
+      toast({
+        title: "API 문서 로드 완료",
+        description: `${processedEndpoints.length}개의 엔드포인트를 찾았습니다.`,
+      });
+    } catch (error) {
+      console.error("API 문서 가져오기 에러:", error);
+      setApiError(
+        `API 문서를 가져오는 데 실패했습니다: ${
+          error instanceof Error ? error.message : String(error)
+        }`
+      );
+      toast({
+        title: "API 문서 로드 실패",
+        description: error instanceof Error ? error.message : String(error),
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchApiDocs();
+  }, []);
+
+  // 엔드포인트 선택 시 Query 파라미터와 Request Body 초기화 ($ref 해석 포함)
+  const handleSelectEndpoint = (value: string) => {
+    if (!value) {
+      setSelectedEndpoint(null);
+      setFormData({
+        query: {} as Record<string, any>,
+        body: {} as Record<string, any>,
+      });
+      setRequestPreview(null);
+      return;
+    }
+    const [method, ...pathParts] = value.split(" ");
+    const path = pathParts.join(" ");
+    const endpoint = endpoints.find(
+      (ep) => ep.method === method && ep.path === path
+    );
+    if (!endpoint) return;
+    setSelectedEndpoint(endpoint);
+    const initialData = {
+      query: {} as Record<string, any>,
+      body: {} as Record<string, any>,
+    };
+    // Query 파라미터 초기화
+    if (endpoint.details.parameters) {
+      endpoint.details.parameters.forEach((param) => {
+        initialData.query[param.name] =
+          param.schema?.default !== undefined ? param.schema.default : "";
+      });
+    }
+    // Request Body 초기화 ($ref 해석)
+    const rawSchema =
+      endpoint.details.requestBody?.content?.["application/json"]?.schema;
+    const requestBodySchema = rawSchema
+      ? resolveSchema(rawSchema, apiDocs)
+      : null;
+    if (requestBodySchema && requestBodySchema.properties) {
+      Object.keys(requestBodySchema.properties).forEach((key) => {
+        initialData.body[key] =
+          requestBodySchema.properties[key].default !== undefined
+            ? requestBodySchema.properties[key].default
+            : getDefaultValueByType(requestBodySchema.properties[key].type);
+      });
+    }
+    setFormData(initialData);
+    setErrors({});
+    setResponse(null);
+    setApiError(null);
+    updateRequestPreview(endpoint, initialData);
+  };
+
+  // URL, headers, data 구성
+  const updateRequestPreview = (
+    endpoint: ApiEndpoint,
+    data: { query: Record<string, any>; body: Record<string, any> }
+  ) => {
+    let url = baseURL + endpoint.path;
+    const headers = { "Content-Type": "application/json" };
+    const queryParams: Record<string, any> = {};
+    let bodyData: Record<string, any> = {};
+    if (endpoint.details.parameters) {
+      endpoint.details.parameters.forEach((param) => {
+        if (
+          data.query[param.name] !== undefined &&
+          data.query[param.name] !== ""
+        ) {
+          // 경로, 쿼리 모두 처리
+          queryParams[param.name] = data.query[param.name];
+        }
+      });
+    }
+    // URL 내 path 파라미터 대체
+    Object.keys(data.query ?? {}).forEach((key) => {
+      if (
+        url.includes(`{${key}}`) &&
+        data.query[key] !== undefined &&
+        data.query[key] !== ""
+      ) {
+        url = url.replace(
+          `{${key}}`,
+          encodeURIComponent(String(data.query[key]))
+        );
+      }
+    });
+    if (endpoint.method !== "GET" && data.body) {
+      bodyData = { ...data.body };
+    }
+    const queryString = new URLSearchParams();
+    Object.entries(queryParams).forEach(([key, value]) => {
+      queryString.append(key, String(value));
+    });
+    if (queryString.toString()) {
+      url += (url.includes("?") ? "&" : "?") + queryString.toString();
+    }
+    setRequestPreview({
+      url,
+      method: endpoint.method,
+      headers,
+      data: Object.keys(bodyData).length > 0 ? bodyData : undefined,
+    });
+  };
+
+  // Query 파라미터 변경 처리
+  const handleQueryChange = (key: string, value: any) => {
+    let convertedValue = value;
+    let error = null;
+    if (selectedEndpoint) {
+      const paramInfo = selectedEndpoint.details.parameters?.find(
+        (p) => p.name === key
+      );
+      const paramType = paramInfo?.schema?.type || "string";
+      const required = paramInfo?.required || false;
+      if (value === "" && required) {
+        error = "필수 입력 필드입니다.";
+      } else if (value !== "") {
+        switch (paramType) {
+          case "integer":
+            if (!/^-?\d+$/.test(value)) {
+              error = "정수를 입력해주세요.";
+            } else {
+              convertedValue = Number.parseInt(value, 10);
+            }
+            break;
+          case "number":
+            if (!/^-?\d+(\.\d+)?$/.test(value)) {
+              error = "숫자를 입력해주세요.";
+            } else {
+              convertedValue = Number.parseFloat(value);
+            }
+            break;
+          case "boolean":
+            if (typeof value === "string" && !/^(true|false)$/i.test(value)) {
+              error = "true 또는 false를 입력해주세요.";
+            } else if (typeof value === "string") {
+              convertedValue = value.toLowerCase() === "true";
+            }
+            break;
+          default:
+            break;
+        }
+      }
+    }
+    const newFormData = {
+      ...formData,
+      query: { ...formData.query, [key]: convertedValue },
+    };
+    setFormData(newFormData);
+    if (error) {
+      setErrors((prev) => ({ ...prev, [key]: error }));
+    } else {
+      setErrors((prev) => {
+        const newErrors = { ...prev };
+        delete newErrors[key];
+        return newErrors;
+      });
+    }
+    if (selectedEndpoint) {
+      updateRequestPreview(selectedEndpoint, newFormData);
+    }
+  };
+
+  // Request Body 변경 처리 ($ref 해석 포함)
+  const handleBodyChange = (key: string, value: any) => {
+    let convertedValue = value;
+    let error = null;
+    if (selectedEndpoint) {
+      const rawSchema =
+        selectedEndpoint.details.requestBody?.content?.["application/json"]
+          ?.schema;
+      const requestBodySchema = rawSchema
+        ? resolveSchema(rawSchema, apiDocs)
+        : null;
+      const properties = requestBodySchema?.properties;
+      const paramType =
+        properties && properties[key]
+          ? properties[key].type || "string"
+          : "string";
+      const required =
+        properties &&
+        properties[key] &&
+        requestBodySchema?.required?.includes(key);
+      if (value === "" && required) {
+        error = "필수 입력 필드입니다.";
+      } else if (value !== "") {
+        switch (paramType) {
+          case "integer":
+            if (!/^-?\d+$/.test(value)) {
+              error = "정수를 입력해주세요.";
+            } else {
+              convertedValue = Number.parseInt(value, 10);
+            }
+            break;
+          case "number":
+            if (!/^-?\d+(\.\d+)?$/.test(value)) {
+              error = "숫자를 입력해주세요.";
+            } else {
+              convertedValue = Number.parseFloat(value);
+            }
+            break;
+          case "boolean":
+            if (typeof value === "string" && !/^(true|false)$/i.test(value)) {
+              error = "true 또는 false를 입력해주세요.";
+            } else if (typeof value === "string") {
+              convertedValue = value.toLowerCase() === "true";
+            }
+            break;
+          default:
+            break;
+        }
+      }
+    }
+    const newFormData = {
+      ...formData,
+      body: { ...formData.body, [key]: convertedValue },
+    };
+    setFormData(newFormData);
+    if (error) {
+      setErrors((prev) => ({ ...prev, [key]: error }));
+    } else {
+      setErrors((prev) => {
+        const newErrors = { ...prev };
+        delete newErrors[key];
+        return newErrors;
+      });
+    }
+    if (selectedEndpoint) {
+      updateRequestPreview(selectedEndpoint, newFormData);
+    }
+  };
+
+  // 전체 폼 검증 (Query와 Body)
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+    let isValid = true;
+    if (selectedEndpoint) {
+      if (selectedEndpoint.details.parameters) {
+        selectedEndpoint.details.parameters.forEach((param) => {
+          if (
+            param.required &&
+            (!formData.query[param.name] || formData.query[param.name] === "")
+          ) {
+            newErrors[param.name] = "필수 입력 필드입니다.";
+            isValid = false;
+          }
+        });
+      }
+      if (
+        selectedEndpoint.details.requestBody?.content?.["application/json"]
+          ?.schema
+      ) {
+        const requestBodySchema = resolveSchema(
+          selectedEndpoint.details.requestBody.content["application/json"]
+            .schema,
+          apiDocs
+        );
+        if (requestBodySchema?.required) {
+          requestBodySchema.required.forEach((key: string) => {
+            if (
+              !formData.body[key] &&
+              formData.body[key] !== 0 &&
+              formData.body[key] !== false
+            ) {
+              newErrors[key] = "필수 입력 필드입니다.";
+              isValid = false;
+            }
+          });
+        }
+      }
+    }
+    setErrors((prev) => ({ ...prev, ...newErrors }));
+    return isValid;
+  };
+
+  // 요청 전송
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!selectedEndpoint || !requestPreview) return;
+    if (!validateForm()) return;
+    setLoading(true);
+    setApiError(null);
+    const startTime = performance.now();
+    try {
+      const res = await axios({
+        method: requestPreview.method,
+        url: requestPreview.url,
+        headers: requestPreview.headers,
+        data: requestPreview.data,
+      });
+      const duration = Math.round(performance.now() - startTime);
+      setResponse(res.data);
+      const historyItem: RequestHistoryItem = {
+        id: Date.now().toString(),
+        timestamp: Date.now(),
+        endpoint: selectedEndpoint,
+        formData: { ...formData },
+        response: res.data,
+        status: res.status,
+        duration,
+      };
+      setRequestHistory((prev) => [historyItem, ...prev]);
+      setActiveTab("response");
+      toast({
+        title: "요청 성공",
+        description: `${res.status} ${res.statusText} (${duration}ms)`,
+      });
+    } catch (error) {
+      console.error("요청 에러:", error);
+      const errorMessage = axios.isAxiosError(error)
+        ? `${error.response?.status || ""} ${error.message}`
+        : String(error);
+      setApiError(`API 요청 실패: ${errorMessage}`);
+      setResponse(null);
+      toast({
+        title: "요청 실패",
+        description: errorMessage,
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 히스토리에서 선택 시 해당 기록 복원
+  const loadFromHistory = (item: RequestHistoryItem) => {
+    setSelectedEndpoint(item.endpoint);
+    setFormData(item.formData);
+    setResponse(item.response);
+    updateRequestPreview(item.endpoint, item.formData);
+    setActiveTab("request");
+  };
+
+  // curl 명령 복사
+  const copyAsCurl = () => {
+    if (!requestPreview) return;
+    let curl = `curl -X ${requestPreview.method} "${requestPreview.url}"`;
+    Object.entries(requestPreview.headers).forEach(([key, value]) => {
+      curl += ` \\\n  -H "${key}: ${value}"`;
+    });
+    if (requestPreview.data) {
+      curl += ` \\\n  -d '${JSON.stringify(requestPreview.data)}'`;
+    }
+    navigator.clipboard.writeText(curl);
+    toast({
+      title: "복사 완료",
+      description: "curl 명령이 클립보드에 복사되었습니다.",
+    });
+  };
+
+  // Helper: getDefaultValueByType
+  const getDefaultValueByType = (type: string) => {
+    switch (type) {
+      case "integer":
+      case "number":
+        return "";
+      case "boolean":
+        return false;
+      case "array":
+        return [];
+      case "object":
+        return {};
+      default:
+        return "";
+    }
+  };
+
+  // Helper: getBadgeVariant (HTTP 메소드별)
+  const getBadgeVariant = (
+    method: string
+  ): "default" | "destructive" | "secondary" | "outline" | null | undefined => {
+    switch (method) {
+      case "GET":
+        return "default";
+      case "POST":
+        return "secondary";
+      case "PUT":
+        return "outline";
+      case "DELETE":
+        return "destructive";
+      default:
+        return "default";
+    }
+  };
+
+  return (
+    <div className="space-y-6">
+      <Card>
+        <CardHeader className="pb-3">
+          <CardTitle className="text-2xl font-bold">REST API 테스트</CardTitle>
+          <CardDescription>
+            OpenAPI 문서를 기반으로 API 요청을 테스트하고 응답을 확인하세요.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="space-y-2">
+              <Label htmlFor="baseUrl">API 서버 URL</Label>
+              <div className="flex gap-2">
+                <Input
+                  id="baseUrl"
+                  value={baseURL}
+                  onChange={(e) => setBaseURL(e.target.value)}
+                  placeholder="http://localhost:8080"
+                  className="flex-1"
+                />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="apiDocsUrl">API 문서 경로</Label>
+              <div className="flex gap-2">
+                <Input
+                  id="apiDocsUrl"
+                  value={apiDocsUrl}
+                  onChange={(e) => setApiDocsUrl(e.target.value)}
+                  placeholder="/v3/api-docs"
+                  className="flex-1"
+                />
+                <Button onClick={fetchApiDocs} disabled={loading}>
+                  {loading ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    "로드"
+                  )}
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6">
+            <Label htmlFor="endpoint">API 엔드포인트</Label>
+            <Select onValueChange={handleSelectEndpoint} disabled={loading}>
+              <SelectTrigger id="endpoint" className="mt-1">
+                <SelectValue placeholder="엔드포인트 선택" />
+              </SelectTrigger>
+              <SelectContent>
+                {endpoints.map((ep, index) => (
+                  <SelectItem key={index} value={`${ep.method} ${ep.path}`}>
+                    <div className="flex items-center gap-2">
+                      <Badge variant={getBadgeVariant(ep.method)}>
+                        {ep.method}
+                      </Badge>
+                      <span>{ep.path}</span>
+                    </div>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {apiError && (
+            <div className="mt-4 p-3 bg-destructive/10 text-destructive rounded-md text-sm">
+              {apiError}
+            </div>
+          )}
+        </CardContent>
+      </Card>
+
+      {selectedEndpoint && (
+        <Tabs value={activeTab} onValueChange={setActiveTab}>
+          <TabsList className="grid w-full grid-cols-3">
+            <TabsTrigger value="request">요청</TabsTrigger>
+            <TabsTrigger value="preview">미리보기</TabsTrigger>
+            <TabsTrigger value="response">응답</TabsTrigger>
+          </TabsList>
+
+          {/* 요청 탭: Query Parameters와 Request Body 모두 표시 */}
+          <TabsContent value="request" className="mt-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {selectedEndpoint.details.parameters &&
+                selectedEndpoint.details.parameters.length > 0 && (
+                  <div>
+                    <h3 className="text-lg font-bold mb-2">Parameters</h3>
+                    {selectedEndpoint.details.parameters.map((param) => {
+                      const paramType = param.schema?.type || "string";
+                      const required = param.required;
+                      const description = param.description || "";
+                      const value =
+                        formData.query[param.name] !== undefined
+                          ? formData.query[param.name]
+                          : "";
+                      return (
+                        <div key={param.name} className="space-y-1">
+                          <Label htmlFor={`param-${param.name}`}>
+                            {param.name}
+                            {required && (
+                              <span className="text-destructive ml-1">*</span>
+                            )}
+                          </Label>
+                          {paramType === "boolean" ? (
+                            <Select
+                              value={
+                                value === true
+                                  ? "true"
+                                  : value === false
+                                  ? "false"
+                                  : ""
+                              }
+                              onValueChange={(val) =>
+                                handleQueryChange(param.name, val === "true")
+                              }
+                            >
+                              <SelectTrigger id={`param-${param.name}`}>
+                                <SelectValue placeholder="선택" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="true">true</SelectItem>
+                                <SelectItem value="false">false</SelectItem>
+                              </SelectContent>
+                            </Select>
+                          ) : (
+                            <Input
+                              id={`param-${param.name}`}
+                              value={value}
+                              onChange={(e) =>
+                                handleQueryChange(param.name, e.target.value)
+                              }
+                              placeholder={description || param.name}
+                            />
+                          )}
+                          {description && (
+                            <p className="text-xs text-muted-foreground">
+                              {description}
+                            </p>
+                          )}
+                          {errors[param.name] && (
+                            <p className="text-xs text-destructive">
+                              {errors[param.name]}
+                            </p>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+
+              {(() => {
+                const rawSchema =
+                  selectedEndpoint.details.requestBody?.content?.[
+                    "application/json"
+                  ]?.schema;
+                const requestBodySchema = rawSchema
+                  ? resolveSchema(rawSchema, apiDocs)
+                  : null;
+                if (!requestBodySchema || !requestBodySchema.properties)
+                  return null;
+                return (
+                  <div className="mt-4">
+                    <h3 className="text-lg font-bold mb-2">Request Body</h3>
+                    {Object.keys(requestBodySchema.properties).map((key) => {
+                      const property = requestBodySchema.properties[key];
+                      const paramType = property?.type ?? "string";
+                      const required =
+                        requestBodySchema.required?.includes(key) ?? false;
+                      const description = property?.description ?? "";
+                      const value =
+                        formData.body[key] !== undefined
+                          ? formData.body[key]
+                          : "";
+                      return (
+                        <div key={key} className="space-y-1">
+                          <Label htmlFor={`body-${key}`}>
+                            {key}
+                            {required && (
+                              <span className="text-destructive ml-1">*</span>
+                            )}
+                          </Label>
+                          {paramType === "boolean" ? (
+                            <Select
+                              value={
+                                value === true
+                                  ? "true"
+                                  : value === false
+                                  ? "false"
+                                  : ""
+                              }
+                              onValueChange={(val) =>
+                                handleBodyChange(key, val === "true")
+                              }
+                            >
+                              <SelectTrigger id={`body-${key}`}>
+                                <SelectValue placeholder="선택" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="true">true</SelectItem>
+                                <SelectItem value="false">false</SelectItem>
+                              </SelectContent>
+                            </Select>
+                          ) : (
+                            <Input
+                              id={`body-${key}`}
+                              value={
+                                typeof value === "object"
+                                  ? JSON.stringify(value)
+                                  : value
+                              }
+                              onChange={(e) =>
+                                handleBodyChange(key, e.target.value)
+                              }
+                              placeholder={description || key}
+                            />
+                          )}
+                          {description && (
+                            <p className="text-xs text-muted-foreground">
+                              {description}
+                            </p>
+                          )}
+                          {errors[key] && (
+                            <p className="text-xs text-destructive">
+                              {errors[key]}
+                            </p>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })()}
+              <div className="flex justify-end gap-2">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => setActiveTab("preview")}
+                >
+                  미리보기
+                </Button>
+                <Button type="submit" disabled={loading}>
+                  {loading ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      요청 중...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-4 w-4" />
+                      요청 보내기
+                    </>
+                  )}
+                </Button>
+              </div>
+            </form>
+          </TabsContent>
+
+          {/* 미리보기 탭 */}
+          <TabsContent value="preview" className="mt-4">
+            {requestPreview ? (
+              <RequestPreview
+                request={requestPreview}
+                onCopy={copyAsCurl}
+                onSend={handleSubmit}
+                loading={loading}
+              />
+            ) : (
+              <p className="text-muted-foreground">요청 정보가 없습니다.</p>
+            )}
+          </TabsContent>
+
+          {/* 응답 탭 */}
+          <TabsContent value="response" className="mt-4">
+            <ResponseViewer response={response} />
+          </TabsContent>
+        </Tabs>
+      )}
+
+      <RequestHistory history={requestHistory} onSelect={loadFromHistory} />
+    </div>
+  );
+}
+
+// Helper: getBadgeVariant (HTTP 메소드별)
+const getBadgeVariant = (
+  method: string
+): "default" | "destructive" | "secondary" | "outline" | null | undefined => {
+  switch (method) {
+    case "GET":
+      return "default";
+    case "POST":
+      return "secondary";
+    case "PUT":
+      return "outline";
+    case "DELETE":
+      return "destructive";
+    default:
+      return "default";
+  }
+};
+
+// Helper: getDefaultValueByType
+function getDefaultValueByType(type: string) {
+  switch (type) {
+    case "integer":
+    case "number":
+      return "";
+    case "boolean":
+      return false;
+    case "array":
+      return [];
+    case "object":
+      return {};
+    default:
+      return "";
+  }
+}
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\components\request-history.tsx
+// src/components/request-history.tsx
+
+"use client";
+
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { ChevronDown, ChevronUp, Clock } from "lucide-react";
+
+interface RequestHistoryItem {
+  id: string;
+  timestamp: number;
+  endpoint: {
+    method: string;
+    path: string;
+    details: any;
+  };
+  formData: { query: Record<string, any>; body: Record<string, any> }; // 수정된 부분
+  response?: any;
+  status?: number;
+  duration?: number;
+}
+
+interface RequestHistoryProps {
+  history: RequestHistoryItem[];
+  onSelect: (item: RequestHistoryItem) => void;
+}
+
+export default function RequestHistory({
+  history,
+  onSelect,
+}: RequestHistoryProps) {
+  const [isOpen, setIsOpen] = useState(true);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+
+  if (history.length === 0) {
+    return null;
+  }
+
+  const formatTime = (timestamp: number) => {
+    return new Date(timestamp).toLocaleTimeString();
+  };
+
+  return (
+    <Card>
+      <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+        <CardHeader className="pb-3">
+          <div className="flex items-center justify-between">
+            <div>
+              <CardTitle className="text-xl font-bold">요청 기록</CardTitle>
+              <CardDescription>
+                최근 API 요청 기록 ({history.length}개)
+              </CardDescription>
+            </div>
+            <CollapsibleTrigger asChild>
+              <Button variant="ghost" size="sm">
+                {isOpen ? (
+                  <ChevronUp className="h-4 w-4" />
+                ) : (
+                  <ChevronDown className="h-4 w-4" />
+                )}
+              </Button>
+            </CollapsibleTrigger>
+          </div>
+        </CardHeader>
+        <CollapsibleContent>
+          <CardContent>
+            <ScrollArea className="h-[300px]">
+              <div className="space-y-2">
+                {history.map((item) => (
+                  <div
+                    key={item.id}
+                    className={`p-3 rounded-md border cursor-pointer transition-colors ${
+                      selectedId === item.id ? "bg-muted" : "hover:bg-muted/50"
+                    }`}
+                    onClick={() => {
+                      setSelectedId(item.id);
+                      onSelect(item);
+                    }}
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <Badge variant={getBadgeVariant(item.endpoint.method)}>
+                          {item.endpoint.method}
+                        </Badge>
+                        <span className="font-medium truncate max-w-[300px]">
+                          {item.endpoint.path}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                        <Clock className="h-3 w-3" />
+                        <span>{formatTime(item.timestamp)}</span>
+                        {item.duration && <span>{item.duration}ms</span>}
+                        {item.status && (
+                          <Badge variant={getStatusBadgeVariant(item.status)}>
+                            {item.status}
+                          </Badge>
+                        )}
+                      </div>
+                    </div>
+                    <div className="text-xs text-muted-foreground truncate">
+                      {JSON.stringify(item.formData)}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </ScrollArea>
+          </CardContent>
+        </CollapsibleContent>
+      </Collapsible>
+    </Card>
+  );
+}
+
+const getBadgeVariant = (
+  method: string
+): "default" | "destructive" | "secondary" | "outline" | null | undefined => {
+  switch (method) {
+    case "GET":
+      return "default";
+    case "POST":
+      return "secondary";
+    case "PUT":
+      return "outline";
+    case "DELETE":
+      return "destructive";
+    default:
+      return "default";
+  }
+};
+
+const getStatusBadgeVariant = (
+  status: number
+): "default" | "destructive" | "secondary" | "outline" | null | undefined => {
+  if (status >= 200 && status < 300) {
+    return "default";
+  } else if (status >= 300 && status < 400) {
+    return "outline";
+  } else if (status >= 400) {
+    return "destructive";
+  } else {
+    return "secondary";
+  }
+};
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\components\request-preview.tsx
+// src/components/request-preview.tsx
+
+"use client";
+
+import type React from "react";
+
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Copy, Send, Loader2 } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+interface RequestPreviewProps {
+  request: {
+    url: string;
+    method: string;
+    headers: Record<string, string>;
+    data?: any;
+  };
+  onCopy: () => void;
+  onSend: (e: React.FormEvent) => void;
+  loading: boolean;
+}
+
+export default function RequestPreview({
+  request,
+  onCopy,
+  onSend,
+  loading,
+}: RequestPreviewProps) {
+  // Format JSON with syntax highlighting
+  const formatJson = (obj: any) => {
+    return JSON.stringify(obj, null, 2);
+  };
+
+  // Generate curl command
+  const getCurlCommand = () => {
+    let curl = `curl -X ${request.method} "${request.url}"`;
+
+    // Add headers
+    Object.entries(request.headers).forEach(([key, value]) => {
+      curl += ` \\\n  -H "${key}: ${value}"`;
+    });
+
+    // Add body
+    if (request.data) {
+      curl += ` \\\n  -d '${JSON.stringify(request.data)}'`;
+    }
+
+    return curl;
+  };
+
+  return (
+    <div className="space-y-4">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Badge variant={getBadgeVariant(request.method)}>
+            {request.method}
+          </Badge>
+          <span className="text-sm font-mono break-all">{request.url}</span>
+        </div>
+        <div className="flex gap-2">
+          <Button size="sm" variant="outline" onClick={onCopy}>
+            <Copy className="h-4 w-4 mr-2" />
+            복사
+          </Button>
+          <Button size="sm" onClick={onSend} disabled={loading}>
+            {loading ? (
+              <>
+                <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                요청 중...
+              </>
+            ) : (
+              <>
+                <Send className="h-4 w-4 mr-2" />
+                요청 보내기
+              </>
+            )}
+          </Button>
+        </div>
+      </div>
+
+      <Tabs defaultValue="curl">
+        <TabsList className="grid w-full grid-cols-3">
+          <TabsTrigger value="curl">curl</TabsTrigger>
+          <TabsTrigger value="headers">Headers</TabsTrigger>
+          <TabsTrigger value="body">Body</TabsTrigger>
+        </TabsList>
+        <TabsContent value="curl">
+          <Card>
+            <CardContent className="p-4">
+              <pre className="text-xs font-mono bg-muted p-4 rounded-md overflow-x-auto">
+                {getCurlCommand()}
+              </pre>
+            </CardContent>
+          </Card>
+        </TabsContent>
+        <TabsContent value="headers">
+          <Card>
+            <CardContent className="p-4">
+              <pre className="text-xs font-mono bg-muted p-4 rounded-md overflow-x-auto">
+                {formatJson(request.headers)}
+              </pre>
+            </CardContent>
+          </Card>
+        </TabsContent>
+        <TabsContent value="body">
+          <Card>
+            <CardContent className="p-4">
+              {request.data ? (
+                <pre className="text-xs font-mono bg-muted p-4 rounded-md overflow-x-auto">
+                  {formatJson(request.data)}
+                </pre>
+              ) : (
+                <p className="text-muted-foreground text-center py-4">
+                  요청 본문이 없습니다.
+                </p>
+              )}
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
+    </div>
+  );
+}
+
+// Helper function to get badge variant based on HTTP method
+const getBadgeVariant = (
+  method: string
+): "default" | "destructive" | "secondary" | "outline" | null | undefined => {
+  switch (method) {
+    case "GET":
+      return "default";
+    case "POST":
+      return "secondary";
+    case "PUT":
+      return "outline";
+    case "DELETE":
+      return "destructive";
+    default:
+      return "default";
+  }
+};
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\components\response-viewer.tsx
+// src/components/response-viewer.tsx
+
+"use client";
+
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Copy } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+
+interface ResponseViewerProps {
+  response: any;
+}
+
+export default function ResponseViewer({ response }: ResponseViewerProps) {
+  const { toast } = useToast();
+
+  const copyResponse = () => {
+    if (!response) return;
+
+    navigator.clipboard.writeText(JSON.stringify(response, null, 2));
+    toast({
+      title: "복사 완료",
+      description: "응답이 클립보드에 복사되었습니다.",
+    });
+  };
+
+  if (!response) {
+    return (
+      <Card>
+        <CardContent className="p-6 text-center text-muted-foreground">
+          아직 응답이 없습니다. API 요청을 보내면 여기에 결과가 표시됩니다.
+        </CardContent>
+      </Card>
+    );
+  }
+
+  return (
+    <div className="space-y-2">
+      <div className="flex justify-end">
+        <Button size="sm" variant="outline" onClick={copyResponse}>
+          <Copy className="h-4 w-4 mr-2" />
+          응답 복사
+        </Button>
+      </div>
+      <Card>
+        <CardContent className="p-0">
+          <pre className="text-xs font-mono bg-muted p-4 rounded-md overflow-x-auto max-h-[500px]">
+            {JSON.stringify(response, null, 2)}
+          </pre>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\components\theme-provider.tsx
+// src/components/theme-provider.tsx
+
+"use client";
+
+import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { type ThemeProviderProps } from "next-themes";
+
+export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
+}
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\components\theme-toggle.tsx
+// src/components/theme-toggle.tsx
+
+"use client";
+
+import * as React from "react";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+export function ThemeToggle() {
+  const { setTheme } = useTheme();
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" size="icon">
+          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          <span className="sr-only">테마 변경</span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem onClick={() => setTheme("light")}>
+          라이트
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("dark")}>
+          다크
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("system")}>
+          시스템
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\hooks\use-toast.ts
+"use client"
+
+// Inspired by react-hot-toast library
+import * as React from "react"
+
+import type {
+  ToastActionElement,
+  ToastProps,
+} from "@/components/ui/toast"
+
+const TOAST_LIMIT = 1
+const TOAST_REMOVE_DELAY = 1000000
+
+type ToasterToast = ToastProps & {
+  id: string
+  title?: React.ReactNode
+  description?: React.ReactNode
+  action?: ToastActionElement
+}
+
+const actionTypes = {
+  ADD_TOAST: "ADD_TOAST",
+  UPDATE_TOAST: "UPDATE_TOAST",
+  DISMISS_TOAST: "DISMISS_TOAST",
+  REMOVE_TOAST: "REMOVE_TOAST",
+} as const
+
+let count = 0
+
+function genId() {
+  count = (count + 1) % Number.MAX_SAFE_INTEGER
+  return count.toString()
+}
+
+type ActionType = typeof actionTypes
+
+type Action =
+  | {
+      type: ActionType["ADD_TOAST"]
+      toast: ToasterToast
+    }
+  | {
+      type: ActionType["UPDATE_TOAST"]
+      toast: Partial<ToasterToast>
+    }
+  | {
+      type: ActionType["DISMISS_TOAST"]
+      toastId?: ToasterToast["id"]
+    }
+  | {
+      type: ActionType["REMOVE_TOAST"]
+      toastId?: ToasterToast["id"]
+    }
+
+interface State {
+  toasts: ToasterToast[]
+}
+
+const toastTimeouts = new Map<string, ReturnType<typeof setTimeout>>()
+
+const addToRemoveQueue = (toastId: string) => {
+  if (toastTimeouts.has(toastId)) {
+    return
+  }
+
+  const timeout = setTimeout(() => {
+    toastTimeouts.delete(toastId)
+    dispatch({
+      type: "REMOVE_TOAST",
+      toastId: toastId,
+    })
+  }, TOAST_REMOVE_DELAY)
+
+  toastTimeouts.set(toastId, timeout)
+}
+
+export const reducer = (state: State, action: Action): State => {
+  switch (action.type) {
+    case "ADD_TOAST":
+      return {
+        ...state,
+        toasts: [action.toast, ...state.toasts].slice(0, TOAST_LIMIT),
+      }
+
+    case "UPDATE_TOAST":
+      return {
+        ...state,
+        toasts: state.toasts.map((t) =>
+          t.id === action.toast.id ? { ...t, ...action.toast } : t
+        ),
+      }
+
+    case "DISMISS_TOAST": {
+      const { toastId } = action
+
+      // ! Side effects ! - This could be extracted into a dismissToast() action,
+      // but I'll keep it here for simplicity
+      if (toastId) {
+        addToRemoveQueue(toastId)
+      } else {
+        state.toasts.forEach((toast) => {
+          addToRemoveQueue(toast.id)
+        })
+      }
+
+      return {
+        ...state,
+        toasts: state.toasts.map((t) =>
+          t.id === toastId || toastId === undefined
+            ? {
+                ...t,
+                open: false,
+              }
+            : t
+        ),
+      }
+    }
+    case "REMOVE_TOAST":
+      if (action.toastId === undefined) {
+        return {
+          ...state,
+          toasts: [],
+        }
+      }
+      return {
+        ...state,
+        toasts: state.toasts.filter((t) => t.id !== action.toastId),
+      }
+  }
+}
+
+const listeners: Array<(state: State) => void> = []
+
+let memoryState: State = { toasts: [] }
+
+function dispatch(action: Action) {
+  memoryState = reducer(memoryState, action)
+  listeners.forEach((listener) => {
+    listener(memoryState)
+  })
+}
+
+type Toast = Omit<ToasterToast, "id">
+
+function toast({ ...props }: Toast) {
+  const id = genId()
+
+  const update = (props: ToasterToast) =>
+    dispatch({
+      type: "UPDATE_TOAST",
+      toast: { ...props, id },
+    })
+  const dismiss = () => dispatch({ type: "DISMISS_TOAST", toastId: id })
+
+  dispatch({
+    type: "ADD_TOAST",
+    toast: {
+      ...props,
+      id,
+      open: true,
+      onOpenChange: (open) => {
+        if (!open) dismiss()
+      },
+    },
+  })
+
+  return {
+    id: id,
+    dismiss,
+    update,
+  }
+}
+
+function useToast() {
+  const [state, setState] = React.useState<State>(memoryState)
+
+  React.useEffect(() => {
+    listeners.push(setState)
+    return () => {
+      const index = listeners.indexOf(setState)
+      if (index > -1) {
+        listeners.splice(index, 1)
+      }
+    }
+  }, [state])
+
+  return {
+    ...state,
+    toast,
+    dismiss: (toastId?: string) => dispatch({ type: "DISMISS_TOAST", toastId }),
+  }
+}
+
+export { useToast, toast }
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\lib\api-utils.ts
+// Helper function to get default value by type
+export function getDefaultValueByType(type: string) {
+  switch (type) {
+    case "integer":
+    case "number":
+      return "";
+    case "boolean":
+      return false;
+    case "array":
+      return [];
+    case "object":
+      return {};
+    default:
+      return "";
+  }
+}
+
+// Helper function to get badge variant based on HTTP method
+export function getBadgeVariantByMethod(method: string) {
+  switch (method.toUpperCase()) {
+    case "GET":
+      return "default";
+    case "POST":
+      return "success";
+    case "PUT":
+      return "warning";
+    case "DELETE":
+      return "destructive";
+    default:
+      return "secondary";
+  }
+}
+
+// Helper function to get badge variant based on HTTP status
+export function getBadgeVariantByStatus(status: number) {
+  if (status >= 200 && status < 300) {
+    return "success";
+  } else if (status >= 300 && status < 400) {
+    return "warning";
+  } else if (status >= 400) {
+    return "destructive";
+  } else {
+    return "secondary";
+  }
+}
+
+// Format JSON with indentation
+export function formatJson(obj: any) {
+  return JSON.stringify(obj, null, 2);
+}
+
+// Generate curl command from request
+export function generateCurlCommand(request: {
+  url: string;
+  method: string;
+  headers: Record<string, string>;
+  data?: any;
+}) {
+  let curl = `curl -X ${request.method} "${request.url}"`;
+
+  // Add headers
+  Object.entries(request.headers).forEach(([key, value]) => {
+    curl += ` \\\n  -H "${key}: ${value}"`;
+  });
+
+  // Add body
+  if (request.data) {
+    curl += ` \\\n  -d '${JSON.stringify(request.data)}'`;
+  }
+
+  return curl;
+}
+
+
+// FILE: C:\woori-workspace\team3\my-api-tester\src\lib\utils.ts
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+

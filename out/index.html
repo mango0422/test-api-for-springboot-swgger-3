@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="./_next/static/css/322c70b4b5731e1f.css"
+      data-precedence="next"
+    />
+    <link
+      rel="preload"
+      as="script"
+      fetchPriority="low"
+      href="./_next/static/chunks/webpack-d07c1d776e89fc91.js"
+    />
+    <script
+      src="./_next/static/chunks/c5844c99-7b3984d4605e1553.js"
+      async=""
+    ></script>
+    <script
+      src="./_next/static/chunks/675-f0b1c5f3f6618b45.js"
+      async=""
+    ></script>
+    <script
+      src="./_next/static/chunks/main-app-d1a9d5c487e456b2.js"
+      async=""
+    ></script>
+    <script
+      src="./_next/static/chunks/286-dca23a20e9f0429e.js"
+      async=""
+    ></script>
+    <script
+      src="./_next/static/chunks/app/layout-c181b86c0fd39e5c.js"
+      async=""
+    ></script>
+    <script
+      src="./_next/static/chunks/575-a97f94162052b441.js"
+      async=""
+    ></script>
+    <script
+      src="./_next/static/chunks/app/page-4d8048523cc9923c.js"
+      async=""
+    ></script>
+    <title>REST API 테스터</title>
+    <meta
+      name="description"
+      content="OpenAPI 문서를 기반으로 REST API를 테스트하는 도구"
+    />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" sizes="16x16" />
+    <script
+      src="./_next/static/chunks/polyfills-42372ed130431b0a.js"
+      nomodule=""
+    ></script>
+  </head>
+  <body class="__className_d65c78">
+    <script>
+      ((e, t, r, n, o, a, i, l) => {
+        let s = document.documentElement,
+          u = ["light", "dark"];
+        function c(t) {
+          var r;
+          (Array.isArray(e) ? e : [e]).forEach((e) => {
+            let r = "class" === e,
+              n = r && a ? o.map((e) => a[e] || e) : o;
+            r
+              ? (s.classList.remove(...n),
+                s.classList.add(a && a[t] ? a[t] : t))
+              : s.setAttribute(e, t);
+          }),
+            (r = t),
+            l && u.includes(r) && (s.style.colorScheme = r);
+        }
+        if (n) c(n);
+        else
+          try {
+            let e = localStorage.getItem(t) || r,
+              n =
+                i && "system" === e
+                  ? window.matchMedia("(prefers-color-scheme: dark)").matches
+                    ? "dark"
+                    : "light"
+                  : e;
+            c(n);
+          } catch (e) {}
+      })("class", "theme", "system", null, ["light", "dark"], null, true, true);
+    </script>
+    <main class="container mx-auto py-6 px-4 min-h-screen">
+      <div class="space-y-6">
+        <div class="rounded-xl border bg-card text-card-foreground shadow">
+          <div class="flex flex-col space-y-1.5 p-6 pb-3">
+            <div class="tracking-tight text-2xl font-bold">REST API 테스트</div>
+            <div class="text-sm text-muted-foreground">
+              OpenAPI 문서를 기반으로 API 요청을 테스트하고 응답을 확인하세요.
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <div class="grid gap-4 md:grid-cols-2">
+              <div class="space-y-2">
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="baseUrl"
+                  >API 서버 URL</label
+                >
+                <div class="flex gap-2">
+                  <input
+                    class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1"
+                    id="baseUrl"
+                    placeholder="http://localhost:8080"
+                    value="http://localhost:8080"
+                  />
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  for="apiDocsUrl"
+                  >API 문서 경로</label
+                >
+                <div class="flex gap-2">
+                  <input
+                    class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1"
+                    id="apiDocsUrl"
+                    placeholder="./v3/api-docs"
+                    value="./v3/api-docs"
+                  /><button
+                    data-slot="button"
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 h-9 px-4 py-2 has-[&gt;svg]:px-3"
+                  >
+                    로드
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6">
+              <label
+                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="endpoint"
+                >API 엔드포인트</label
+              ><button
+                type="button"
+                role="combobox"
+                aria-controls="radix-«R597db»"
+                aria-expanded="false"
+                aria-autocomplete="none"
+                dir="ltr"
+                data-state="closed"
+                data-placeholder=""
+                class="flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background data-[placeholder]:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1 mt-1"
+                id="endpoint"
+              >
+                <span style="pointer-events: none">엔드포인트 선택</span
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-down h-4 w-4 opacity-50"
+                  aria-hidden="true"
+                >
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg></button
+              ><select
+                aria-hidden="true"
+                tabindex="-1"
+                style="
+                  position: absolute;
+                  border: 0;
+                  width: 1px;
+                  height: 1px;
+                  padding: 0;
+                  margin: -1px;
+                  overflow: hidden;
+                  clip: rect(0, 0, 0, 0);
+                  white-space: nowrap;
+                  word-wrap: normal;
+                "
+              >
+                <option value=""></option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div
+      role="region"
+      aria-label="Notifications (F8)"
+      tabindex="-1"
+      style="pointer-events: none"
+    >
+      <ol
+        tabindex="-1"
+        class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"
+      ></ol>
+    </div>
+    <script
+      src="./_next/static/chunks/webpack-d07c1d776e89fc91.js"
+      async=""
+    ></script>
+    <script>
+      (self.__next_f = self.__next_f || []).push([0]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '1:"$Sreact.fragment"\n2:I[3511,["286","static/chunks/286-dca23a20e9f0429e.js","177","static/chunks/app/layout-c181b86c0fd39e5c.js"],"ThemeProvider"]\n3:I[7984,[],""]\n4:I[2774,[],""]\n5:I[9920,["286","static/chunks/286-dca23a20e9f0429e.js","177","static/chunks/app/layout-c181b86c0fd39e5c.js"],"Toaster"]\n6:I[1155,["286","static/chunks/286-dca23a20e9f0429e.js","575","static/chunks/575-a97f94162052b441.js","974","static/chunks/app/page-4d8048523cc9923c.js"],"default"]\n7:I[5824,[],"OutletBoundary"]\na:I[5824,[],"ViewportBoundary"]\nc:I[5824,[],"MetadataBoundary"]\ne:I[7135,[],""]\n:HL["./_next/static/css/322c70b4b5731e1f.css","style"]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '0:{"P":null,"b":"4InXgQtkW5qmj2QkLk9tC","p":"","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"./_next/static/css/322c70b4b5731e1f.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__className_d65c78","children":["$","$L2",null,{"attribute":"class","defaultTheme":"system","enableSystem":true,"disableTransitionOnChange":true,"children":[["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L5",null,{}]]}]}]}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","main",null,{"className":"container mx-auto py-6 px-4 min-h-screen","children":["$","$L6",null,{}]}],"$undefined",null,["$","$L7",null,{"children":["$L8","$L9",null]}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","ue74Xk5p9pOUEc8ie6PxK",{"children":[["$","$La",null,{"children":"$Lb"}],null]}],["$","$Lc",null,{"children":"$Ld"}]]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        'b:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]\n8:null\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '9:null\nd:[["$","title","0",{"children":"REST API 테스터"}],["$","meta","1",{"name":"description","content":"OpenAPI 문서를 기반으로 REST API를 테스트하는 도구"}],["$","link","2",{"rel":"icon","href":"./favicon.ico","type":"image/x-icon","sizes":"16x16"}]]\n',
+      ]);
+    </script>
+  </body>
+</html>
