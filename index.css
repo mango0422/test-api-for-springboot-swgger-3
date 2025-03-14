@@ -1,0 +1,172 @@
+/* CSS 변수 정의 */
+/* 라이트 테마: 주황 + 하늘색 + 흰색 계열 */
+:root {
+  --radius: 0.625rem;
+
+  /* 배경: 밝은 주황 톤 (pastel orange) */
+  --background: oklch(0.96 0.08 80);
+  /* 텍스트: 살짝 어두운 브라운/그레이 톤 */
+  --foreground: oklch(0.2 0.04 60);
+
+  /* 카드 배경: 거의 흰색 */
+  --card: oklch(0.98 0.01 85);
+  /* 카드 텍스트: 본문과 유사하게 */
+  --card-foreground: oklch(0.2 0.04 60);
+
+  /* 주요 색상: 하늘색 느낌 */
+  --primary: oklch(0.85 0.15 220);
+  --primary-foreground: oklch(0.2 0.02 220);
+
+  /* Muted 배경: 아주 연한 주황 */
+  --muted: oklch(0.95 0.05 70);
+  --muted-foreground: oklch(0.35 0.03 70);
+}
+
+/* 다크 테마: 검은색 + 핑크 + 보라 */
+.dark {
+  /* 배경: 거의 검정이지만 보라 기운 */
+  --background: oklch(0.15 0.08 300);
+  /* 텍스트: 밝은 핑크/보라 쪽 */
+  --foreground: oklch(0.9 0.06 340);
+
+  /* 카드 배경: 배경보다 살짝 밝은 보라기운 검정 */
+  --card: oklch(0.18 0.06 300);
+  /* 카드 텍스트: 밝은 핑크/보라 */
+  --card-foreground: oklch(0.9 0.06 340);
+
+  /* 주요 색상: 선명한 핑크/마젠타 */
+  --primary: oklch(0.7 0.25 340);
+  /* 주요 텍스트: 매우 어두운 톤(혹은 검정) */
+  --primary-foreground: oklch(0.05 0.02 0);
+
+  /* Muted 배경: 어두운 보라 */
+  --muted: oklch(0.25 0.15 290);
+  /* Muted 텍스트: 조금 밝은 보라/회색 */
+  --muted-foreground: oklch(0.8 0.03 340);
+}
+
+/* 기본 폰트 및 배경/텍스트 색상 */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* 코드 블록 스타일 (CSS 변수 사용) */
+pre {
+  background-color: var(--card);
+  color: var(--card-foreground);
+  padding: 1rem;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+/* 컨테이너 최대 너비 */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 탭 버튼 스타일 (색상 변수 활용) */
+/* ✅ 탭 버튼 스타일 (순수 CSS 변환) */
+.tab-button {
+  padding: 0.5rem;
+  border-radius: 0.375rem; /* Tailwind의 rounded */
+  outline: none;
+  cursor: pointer;
+}
+
+/* ✅ 활성화된 탭 */
+.tab-active {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+/* ✅ 비활성화된 탭 */
+.tab-inactive {
+  background-color: var(--muted);
+  color: var(--muted-foreground);
+}
+
+/* ✅ Tailwind Base Layer 스타일을 순수 CSS로 변환 */
+* {
+  border: 1px solid rgba(100, 100, 100, 0.2); /* Tailwind `border-neutral-300` */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease; /* 다크모드 전환 시 자연스럽게 */
+}
+
+select option {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: var(--card);
+  color: var(--card-foreground);
+  padding: 0.5rem 2.5rem 0.5rem 0.75rem; /* 오른쪽에 드롭다운 아이콘 공간 확보 */
+  border: 1px solid var(--foreground);
+  border-radius: var(--radius);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23{색상}' viewBox='0 0 20 20'%3E%3Cpath d='M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1rem;
+}
+
+/* ✅ 페이드 인 애니메이션 */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✅ 페이드 아웃 애니메이션 */
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* ✅ 슬라이드 업 애니메이션 */
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ✅ 토스트 애니메이션 적용 */
+.toast {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.toast-leave {
+  animation: fade-out 0.3s ease-in forwards;
+}
+
+/* ✅ 탭 전환 시 부드러운 전환 */
+.tab-content {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* ✅ 버튼 클릭 시 피드백 효과 */
+.button-click {
+  transform: scale(0.95);
+  transition: transform 0.1s ease-in-out;
+}

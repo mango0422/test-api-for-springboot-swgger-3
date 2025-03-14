@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>REST API 테스터</title>
+    <!-- Tailwind CSS CDN 설정 -->
+    <script>
+      window.tailwindConfig = {
+        darkMode: "class",
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- index.css 불러오기 -->
+    <link rel="stylesheet" href="index.css" />
+    <!-- React, ReactDOM CDN (React 18) -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <!-- Babel (JSX 변환) -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <script>
+      // 시스템 다크 모드 감지 후 dark 클래스 추가
+      document.addEventListener("DOMContentLoaded", () => {
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.body.classList.add("dark");
+        }
+      });
+    </script>
+    <div id="root"></div>
+    <!-- index.js 불러오기 (Babel 변환을 위해 type="text/babel" 사용) -->
+    <script type="text/babel" src="index.js"></script>
+  </body>
+</html>
