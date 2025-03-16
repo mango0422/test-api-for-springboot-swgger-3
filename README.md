@@ -1,5 +1,23 @@
 # My API Tester
 
+<h2> $\color{#DD6565}간단한 사용 예시$ </h2>
+
+[예제 사이트](https://mango0422.github.io/test-api-for-springboot-swgger-3/)
+
+<p> 위 사이트는 nextjs 페이지와 $\color{#DD6565}무관하게$ 간단하게 테스트 가능한 $\color{#DD6565}별도의 사이트$입니다.</p>
+<p>예제로 만들었기에 디자인이 다소 다릅니다.</p>
+
+사용시 api 서버에서 `https://mango0422.github.io/` 도메인을 반드시 `cors exception` 처리하시기 바랍니다.
+
+**참고: 프레임워크 별 기본 포트번호 + url 목록**
+| 프레임워크 | 기본 포트 번호 | `/v3/api-docs` URL |
+|------------|----------------|--------------------|
+| **스프링 부트** | 8080 | `http://localhost:8080/v3/api-docs` |
+| **Express.js** | 3000 | `http://localhost:3000/v3/api-docs` |
+| **Django** | 8000 | `http://localhost:8000/v3/api-docs` |
+| **Ruby on Rails** | 3000 | `http://localhost:3000/v3/api-docs` |
+| **ASP.NET Core** | 5000 | `http://localhost:5000/v3/api-docs` |
+
 My API Tester는 OpenAPI 문서를 기반으로 REST API 요청을 테스트하고 응답을 확인할 수 있는 웹 애플리케이션입니다. Next.js와 React를 기반으로 정적 빌드하여 배포할 수 있으며, 누구나 쉽게 API를 테스트할 수 있도록 사용자 친화적인 UI를 제공합니다.
 
 ## 주요 기능
@@ -34,6 +52,8 @@ My API Tester는 OpenAPI 문서를 기반으로 REST API 요청을 테스트하�
    npm install
    # 또는
    yarn install
+   # 또는
+   pnpm install
    ```
 
 3. **개발 서버 실행**
@@ -51,6 +71,10 @@ My API Tester는 OpenAPI 문서를 기반으로 REST API 요청을 테스트하�
 4. **정적 빌드 및 배포**  
    GitHub Pages에 배포하려면 Next.js의 정적 HTML Export 기능을 활용하세요.
    ```bash
+   npm run build
+   # 또는
+   yarn run build
+   # 또는
    pnpm run build
    ```
    `out` 폴더에 정적 파일이 생성되며, 이를 GitHub Pages에 업로드하여 배포할 수 있습니다.
